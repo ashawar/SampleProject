@@ -19,7 +19,7 @@ namespace SampleApp.Tests
             var result =
                 controller.PostContact(item) as CreatedAtRouteNegotiatedContentResult<Contact>;
 
-            Assert.IsNotNull(result);
+            Assert.IsNull(result);
             Assert.AreEqual(result.RouteName, "DefaultApi");
             Assert.AreEqual(result.RouteValues["id"], result.Content.Id);
             Assert.AreEqual(result.Content.FirstName, item.FirstName);
